@@ -1,5 +1,19 @@
 # dtc-acoustic-spectrumer
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)&nbsp;
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/080a7b2a33b24538bf51d3de974daddf)](https://www.codacy.com/app/dtczhl/dtc-acoustic-spectrumer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dtczhl/dtc-acoustic-spectrumer&amp;utm_campaign=Badge_Grade)
+
 A simple android app to display the spectrum of received sounds
+
+## Screenshot
+
+<img src="image/screenshot.jpg" width="120" alt="screenshot" />
+
+Screenshot from Huawei Mate 20, as you can see that there is spike around 19 KHz when I send sounds of 19 KHz. See my [dtc-frequency-player](https://github.com/dtczhl/dtc-frequency-player) about how to send sounds of a specific frequency.
+
+Ranges:
+*   x-axis (horizontal): \[0Hz, 24 KHz\]
+*   y-axis (vertical): strength of frequency in dB
 
 ## Preparation
 
@@ -15,18 +29,18 @@ A simple android app to display the spectrum of received sounds
 The interface to the spectrum analysis is the `AnalyzeFrequency.java` class. The spectrum range is [\0 Hz, 24 KHz\].
 
 1.  start frequency analysis
-  ```java
+```java
   AnalyzeFrequency mFftAnalysis = new AnalyzeFrequency(mHandler, mRun);
   mFftAnalysis.start();
-  ```
+```
 
 2.  stop frequency analysis
-  ```java
+```java
   if (mFftAnalysis != null) {
       mFftAnalysis.stop();
       mFftAnalysis = null;
   }
-  ```
+```
 
 ## Phones Tested
 *   Huawei Mate 20
