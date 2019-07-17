@@ -9,7 +9,7 @@ A simple android app to display the spectrum of received sounds
 
 <img src="image/screenshot.jpg" width="120" alt="screenshot" />
 
-Screenshot from Huawei Mate 20, as you can see that there is spike around 19 KHz when I send sounds of 19 KHz. See my [dtc-frequency-player](https://github.com/dtczhl/dtc-frequency-player) about how to send sounds of a specific frequency.
+Screenshot from Huawei Mate 20. You can see that there is a spike around 19 KHz when I send sounds of that frequency. See my [dtc-frequency-player](https://github.com/dtczhl/dtc-frequency-player) about how to send sounds of a specific frequency.
 
 Ranges:
 *   x-axis (horizontal): \[0Hz, 24 KHz\]
@@ -17,12 +17,16 @@ Ranges:
 
 ## Source Code
 
-The interface to the spectrum analysis is the `AnalyzeFrequency.java` class. The spectrum range is [\0 Hz, 24 KHz\].
+The interface to the spectrum analysis is the `AnalyzeFrequency.java` class. The spectrum range is \[0 Hz, 24 KHz\].
 
 1.  start frequency analysis
 ```java
   AnalyzeFrequency mFftAnalysis = new AnalyzeFrequency(mHandler, mRun);
   mFftAnalysis.start();
+
+  //  FFT magnitude for current frame of received sound.
+  //  Default length: 4096/2-1
+  mFftAnalysis.mMagnitude
 ```
 
 2.  stop frequency analysis
