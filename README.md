@@ -15,17 +15,8 @@ Ranges:
 *   x-axis (horizontal): \[0Hz, 24 KHz\]
 *   y-axis (vertical): strength of frequency in dB
 
-## Preparation
-
-1.  download the source code of Apache Commons Math library for Java that includes Fast-Fourier-Transform (FFT). <http://commons.apache.org/proper/commons-math/download_math.cgi>
-
-2.  extract the downloaded file. Goes to `commons-math3-***/src/main/java/org/apache/commons/math3`, remove the `geometry` folder which is not compatible with Android.
-
-3.  goes to `commons-math3-***/src/main/java/` and copy the `org` folder to your Android project `app/src/main/`
-
-4.  enable Android permission `<uses-permission android:name="android.permission.RECORD_AUDIO" />`
-
 ## Source Code
+
 The interface to the spectrum analysis is the `AnalyzeFrequency.java` class. The spectrum range is [\0 Hz, 24 KHz\].
 
 1.  start frequency analysis
@@ -41,6 +32,16 @@ The interface to the spectrum analysis is the `AnalyzeFrequency.java` class. The
       mFftAnalysis = null;
   }
 ```
+
+Some critical steps to create this Android app from scratch.
+
+1.  download the source code of Apache Commons Math library for Java that includes Fast-Fourier-Transform (FFT). <http://commons.apache.org/proper/commons-math/download_math.cgi>
+
+2.  extract the downloaded file. Goes to `commons-math3-***/src/main/java/org/apache/commons/math3`, remove the `geometry` folder which is not compatible with Android.
+
+3.  goes to `commons-math3-***/src/main/java/` and copy the `org` folder to your Android project `app/src/main/`
+
+4.  enable Android permission `<uses-permission android:name="android.permission.RECORD_AUDIO" />`
 
 ## Phones Tested
 *   Huawei Mate 20
